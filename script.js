@@ -97,7 +97,21 @@ publishBtn.addEventListener("click", () => {
         JSON.stringify(books)
       );
 
-      displayBooks();
+      displayBooks(bookCard.innerHTML = `
+  <a href="book.html?index=${index}" class="book-link">
+
+    <div class="book-cover"></div>
+
+    <h3>${book.title}</h3>
+
+    <p>${book.description}</p>
+
+  </a>
+
+  <button class="delete-btn">
+    Delete
+  </button>
+`;);
 
     });
 
