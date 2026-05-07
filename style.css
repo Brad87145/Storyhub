@@ -178,3 +178,49 @@ button:hover {
 .delete-btn:hover {
   background: #dc2626;
 }
+
+/* BOOK PAGE */
+
+.book-link {
+  text-decoration: none;
+  color: white;
+}
+
+.book-page {
+  text-align: center;
+
+  padding: 80px 20px;
+}
+
+.book-page-cover {
+  width: 250px;
+  height: 350px;
+
+  margin: auto;
+
+  background: linear-gradient(
+    135deg,
+    #6366f1,
+    #8b5cf6
+  );
+
+  border-radius: 20px;
+
+  margin-bottom: 40px;
+}
+
+.book-page h1 {
+  margin-bottom: 20px;
+
+  font-size: 3rem;
+}
+
+.book-page p {
+  max-width: 700px;
+
+  margin: auto;
+
+  color: #cbd5e1;
+
+  line-height: 1.8;
+}
