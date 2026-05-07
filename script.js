@@ -61,8 +61,48 @@ publishBtn.addEventListener("click", () => {
     JSON.stringify(books)
   );
 
-  displayBooks();
 
-});
+  function displayBooks() {
 
-displayBooks();
+  bookList.innerHTML = "";
+
+  books.forEach((book, index) => {
+
+    const bookCard =
+      document.createElement("div");
+
+    bookCard.classList.add("book-card");
+
+    bookCard.innerHTML = `
+      <div class="book-cover"></div>
+
+      <h3>${book.title}</h3>
+
+      <p>${book.description}</p>
+
+      <button class="delete-btn">
+        Delete
+      </button>
+    `;
+
+    const deleteBtn =
+      bookCard.querySelector(".delete-btn");
+
+    deleteBtn.addEventListener("click", () => {
+
+      books.splice(index, 1);
+
+      localStorage.setItem(
+        "books",
+        JSON.stringify(books)
+      );
+
+      displayBooks();
+
+    });
+
+    bookList.appendChild(bookCard);
+
+  });
+
+}
