@@ -83,3 +83,64 @@ button {
 button:hover {
   background: #4f46e5;
 }
+
+/* PUBLISH PAGE */
+
+.publish {
+  padding: 80px 20px;
+
+  text-align: center;
+}
+
+.book-form {
+  max-width: 600px;
+
+  margin: 40px auto;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.book-form input,
+.book-form textarea {
+  padding: 15px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  font-size: 1rem;
+}
+
+.book-form textarea {
+  min-height: 200px;
+
+  resize: vertical;
+}
+
+/* BOOKS */
+
+#book-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  gap: 20px;
+
+  margin-top: 50px;
+}
+
+.book-card {
+  background: #1e293b;
+
+  width: 300px;
+
+  padding: 20px;
+
+  border-radius: 16px;
+
+  text-align: left;
+}
