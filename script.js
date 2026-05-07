@@ -18,10 +18,17 @@ function displayBooks() {
 
     bookCard.classList.add("book-card");
 
-    bookCard.innerHTML = `
-      <h3>${book.title}</h3>
-      <p>${book.description}</p>
-    `;
+   bookCard.innerHTML = `
+  <div class="book-cover"></div>
+
+  <h3>${book.title}</h3>
+
+  <p>${book.description}</p>
+
+  <button class="delete-btn">
+    Delete
+  </button>
+`;
 
     bookList.appendChild(bookCard);
 
