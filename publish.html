@@ -1,1 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Publish Book</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <h2>StoryHub</h2>
+
+    <ul>
+      <li><a href="index.html">Home</a></li>
+    </ul>
+  </nav>
+
+  <section class="publish">
+
+    <h1>Create A Book</h1>
+
+    <div class="book-form">
+
+      <input
+        type="text"
+        id="title"
+        placeholder="Book Title"
+      >
+
+      <textarea
+        id="description"
+        placeholder="Book Description"
+      ></textarea>
+
+      <button id="publish-btn">
+        Publish Book
+      </button>
+
+    </div>
+
+    <div id="book-list"></div>
+
+  </section>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
