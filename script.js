@@ -66,3 +66,37 @@ publishBtn.addEventListener("click", () => {
 });
 
 displayBooks();
+
+/* BOOK CARD DESIGN */
+
+.book-cover {
+  height: 180px;
+
+  background: linear-gradient(
+    135deg,
+    #6366f1,
+    #8b5cf6
+  );
+
+  border-radius: 12px;
+
+  margin-bottom: 20px;
+}
+
+.book-card h3 {
+  margin-bottom: 10px;
+}
+
+.book-card p {
+  color: #cbd5e1;
+
+  margin-bottom: 20px;
+}
+
+.delete-btn {
+  background: #ef4444;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+}
