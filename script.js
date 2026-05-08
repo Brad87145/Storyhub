@@ -21,6 +21,11 @@ function displayBooks() {
     card.classList.add("book-card");
 
     card.innerHTML = `
+      <img
+        src="${book.cover}"
+        class="book-cover"
+      >
+
       <h2>${book.title}</h2>
 
       <p>${book.description}</p>
@@ -62,21 +67,37 @@ button.addEventListener("click", () => {
   const description =
     document.getElementById("description").value;
 
-  if (title === "") return;
+  const coverFile =
+    document.getElementById("cover").files[0];
 
-  const newBook = {
-    title,
-    description
+  if (!coverFile) {
+    alert("Please upload a cover image.");
+    return;
+  }
+
+  const reader =
+    new FileReader();
+
+  reader.onload = function () {
+
+    const newBook = {
+      title,
+      description,
+      cover: reader.result
+    };
+
+    books.push(newBook);
+
+    localStorage.setItem(
+      "books",
+      JSON.stringify(books)
+    );
+
+    displayBooks();
+
   };
 
-  books.push(newBook);
-
-  localStorage.setItem(
-    "books",
-    JSON.stringify(books)
-  );
-
-  displayBooks();
+  reader.readAsDataURL(coverFile);
 
 });
 
