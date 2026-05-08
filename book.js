@@ -74,7 +74,7 @@ addChapterBtn.addEventListener("click", () => {
     content: chapterContent
   };
 
-  book.chapters.push(newChapter);
+ book.chapters.forEach((chapter, chapterIndex) => {
 
   localStorage.setItem(
     "books",
