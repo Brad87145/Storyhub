@@ -16,10 +16,44 @@ const book =
 const chapter =
   book.chapters[chapterIndex];
 
+/* LOAD CHAPTER */
+
 document.getElementById(
   "chapter-page-title"
-).textContent = chapter.title;
+).value = chapter.title;
 
 document.getElementById(
   "chapter-page-content"
-).textContent = chapter.content;
+).value = chapter.content;
+
+/* SAVE */
+
+const saveBtn =
+  document.getElementById("save-chapter-btn");
+
+saveBtn.addEventListener("click", () => {
+
+  const updatedTitle =
+    document.getElementById(
+      "chapter-page-title"
+    ).value;
+
+  const updatedContent =
+    document.getElementById(
+      "chapter-page-content"
+    ).value;
+
+  chapter.title =
+    updatedTitle;
+
+  chapter.content =
+    updatedContent;
+
+  localStorage.setItem(
+    "books",
+    JSON.stringify(books)
+  );
+
+  alert("Chapter saved!");
+
+});
