@@ -21,6 +21,9 @@ function displayBooks() {
     card.classList.add("book-card");
 
     card.innerHTML = `
+      <a href="book.html?index=${index}" class="book-link">
+
+
       <img
         src="${book.cover}"
         class="book-cover"
