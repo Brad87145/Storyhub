@@ -38,25 +38,31 @@ function displayChapters() {
 
   chapterList.innerHTML = "";
 
-  book.chapters.forEach((chapter) => {
+  book.chapters.forEach((chapter, chapterIndex) => {
 
     const chapterCard =
       document.createElement("div");
 
     chapterCard.classList.add("chapter-card");
 
-  chapterCard.innerHTML = `
-  <a
-    href="chapter.html?book=${index}&chapter=${book.chapters.indexOf(chapter)}"
-    class="chapter-link"
-  >
+    chapterCard.innerHTML = `
+      <a
+        href="chapter.html?book=${index}&chapter=${chapterIndex}"
+        class="chapter-link"
+      >
 
-    <h2>${chapter.title}</h2>
+        <h2>${chapter.title}</h2>
 
-    <p>${chapter.content}</p>
+        <p>${chapter.content}</p>
 
-  </a>
-`;
+      </a>
+    `;
+
+    chapterList.appendChild(chapterCard);
+
+  });
+
+}
 
 const addChapterBtn =
   document.getElementById("add-chapter-btn");
@@ -74,7 +80,7 @@ addChapterBtn.addEventListener("click", () => {
     content: chapterContent
   };
 
- book.chapters.forEach((chapter, chapterIndex) => {
+  book.chapters.push(newChapter);
 
   localStorage.setItem(
     "books",
