@@ -4,6 +4,56 @@ const button =
 const list =
   document.getElementById("book-list");
 
+let books =
+  JSON.parse(localStorage.getItem("books")) || [];
+
+/* DISPLAY BOOKS */
+
+function displayBooks() {
+
+  list.innerHTML = "";
+
+  books.forEach((book, index) => {
+
+    const card =
+      document.createElement("div");
+
+    card.classList.add("book-card");
+
+    card.innerHTML = `
+      <h2>${book.title}</h2>
+
+      <p>${book.description}</p>
+
+      <button class="delete-btn">
+        Delete
+      </button>
+    `;
+
+    const deleteBtn =
+      card.querySelector(".delete-btn");
+
+    deleteBtn.addEventListener("click", () => {
+
+      books.splice(index, 1);
+
+      localStorage.setItem(
+        "books",
+        JSON.stringify(books)
+      );
+
+      displayBooks();
+
+    });
+
+    list.appendChild(card);
+
+  });
+
+}
+
+/* PUBLISH */
+
 button.addEventListener("click", () => {
 
   const title =
@@ -12,16 +62,24 @@ button.addEventListener("click", () => {
   const description =
     document.getElementById("description").value;
 
-  const card =
-    document.createElement("div");
+  if (title === "") return;
 
-  card.classList.add("book-card");
+  const newBook = {
+    title,
+    description
+  };
 
-  card.innerHTML = `
-    <h2>${title}</h2>
-    <p>${description}</p>
-  `;
+  books.push(newBook);
 
-  list.appendChild(card);
+  localStorage.setItem(
+    "books",
+    JSON.stringify(books)
+  );
+
+  displayBooks();
 
 });
+
+/* LOAD BOOKS */
+
+displayBooks();
