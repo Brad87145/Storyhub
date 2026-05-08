@@ -10,11 +10,15 @@ const books =
 const book =
   books[index];
 
-document.getElementById("book-cover").src =
-  book.cover;
+if (book) {
 
-document.getElementById("book-title").textContent =
-  book.title;
+  document.getElementById("book-cover").src =
+    book.cover;
 
-document.getElementById("book-description").textContent =
-  book.description;
+  document.getElementById("book-title").textContent =
+    book.title;
+
+  document.getElementById("book-description").textContent =
+    book.description;
+
+}
