@@ -45,17 +45,18 @@ function displayChapters() {
 
     chapterCard.classList.add("chapter-card");
 
-    chapterCard.innerHTML = `
-      <h2>${chapter.title}</h2>
+  chapterCard.innerHTML = `
+  <a
+    href="chapter.html?book=${index}&chapter=${book.chapters.indexOf(chapter)}"
+    class="chapter-link"
+  >
 
-      <p>${chapter.content}</p>
-    `;
+    <h2>${chapter.title}</h2>
 
-    chapterList.appendChild(chapterCard);
+    <p>${chapter.content}</p>
 
-  });
-
-}
+  </a>
+`;
 
 const addChapterBtn =
   document.getElementById("add-chapter-btn");
