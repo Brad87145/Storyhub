@@ -70,10 +70,7 @@ button.addEventListener("click", () => {
   const coverFile =
     document.getElementById("cover").files[0];
 
-  if (!coverFile) {
-    alert("Please upload a cover image.");
-    return;
-  }
+if (coverFile) {
 
   const reader =
     new FileReader();
@@ -99,6 +96,24 @@ button.addEventListener("click", () => {
 
   reader.readAsDataURL(coverFile);
 
+} else {
+
+  const newBook = {
+    title,
+    description,
+    cover: "https://via.placeholder.com/300x250"
+  };
+
+  books.push(newBook);
+
+  localStorage.setItem(
+    "books",
+    JSON.stringify(books)
+  );
+
+  displayBooks();
+
+}
 });
 
 /* LOAD BOOKS */
