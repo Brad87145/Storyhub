@@ -10,6 +10,9 @@ const books =
 const book =
   books[index];
 
+document.getElementById("book-cover").src =
+  book.cover;
+
 document.getElementById("book-title").textContent =
   book.title;
 
