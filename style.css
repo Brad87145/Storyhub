@@ -243,3 +243,36 @@ button {
 
   white-space: pre-wrap;
 }
+
+/* CHAPTER PAGE */
+
+.chapter-link {
+  text-decoration: none;
+  color: white;
+
+  display: block;
+}
+
+.chapter-page {
+  max-width: 900px;
+
+  margin: auto;
+
+  padding: 80px 20px;
+}
+
+.chapter-page h1 {
+  font-size: 3rem;
+
+  margin-bottom: 40px;
+}
+
+.chapter-page p {
+  color: #cbd5e1;
+
+  line-height: 2;
+
+  font-size: 1.2rem;
+
+  white-space: pre-wrap;
+}
