@@ -138,3 +138,41 @@ button {
 
   margin-bottom: 20px;
 }
+/* BOOK PAGE */
+
+.book-link {
+  text-decoration: none;
+  color: white;
+}
+
+.book-page {
+  max-width: 800px;
+
+  margin: auto;
+
+  padding: 80px 20px;
+
+  text-align: center;
+}
+
+.book-page-cover {
+  width: 300px;
+
+  border-radius: 20px;
+
+  margin-bottom: 40px;
+}
+
+.book-page h1 {
+  margin-bottom: 20px;
+
+  font-size: 3rem;
+}
+
+.book-page p {
+  color: #cbd5e1;
+
+  line-height: 1.8;
+
+  font-size: 1.1rem;
+}
