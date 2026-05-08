@@ -110,3 +110,17 @@ button {
 
   line-height: 1.6;
 }
+
+/* DELETE BUTTON */
+
+.delete-btn {
+  margin-top: 20px;
+
+  width: 100%;
+
+  background: #ef4444;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+}
