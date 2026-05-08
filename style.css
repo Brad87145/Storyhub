@@ -276,3 +276,37 @@ button {
 
   white-space: pre-wrap;
 }
+
+/* EDIT CHAPTER */
+
+.chapter-page {
+  max-width: 900px;
+
+  margin: auto;
+
+  padding: 80px 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.chapter-page input,
+.chapter-page textarea {
+  width: 100%;
+
+  padding: 15px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  font-size: 1rem;
+}
+
+.chapter-page textarea {
+  min-height: 400px;
+
+  resize: vertical;
+}
