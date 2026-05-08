@@ -20,24 +20,24 @@ function displayBooks() {
 
     card.classList.add("book-card");
 
-    card.innerHTML = `
-      <a href="book.html?index=${index}" class="book-link">
+  card.innerHTML = `
+  <a href="book.html?index=${index}" class="book-link">
 
+    <img
+      src="${book.cover}"
+      class="book-cover"
+    >
 
-      <img
-        src="${book.cover}"
-        class="book-cover"
-      >
+    <h2>${book.title}</h2>
 
-      <h2>${book.title}</h2>
+    <p>${book.description}</p>
 
-      <p>${book.description}</p>
+  </a>
 
-      <button class="delete-btn">
-        Delete
-      </button>
-    `;
-
+  <button class="delete-btn">
+    Delete
+  </button>
+`;
     const deleteBtn =
       card.querySelector(".delete-btn");
 
