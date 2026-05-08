@@ -310,3 +310,17 @@ button {
 
   resize: vertical;
 }
+
+/* DELETE CHAPTER */
+
+.delete-chapter-btn {
+  margin-top: 20px;
+
+  width: 100%;
+
+  background: #ef4444;
+}
+
+.delete-chapter-btn:hover {
+  background: #dc2626;
+}
