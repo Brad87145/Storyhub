@@ -3,30 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Publish</title>
 
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>Create A Book</h1>
+  <section class="publish">
 
-  <input
-    type="text"
-    id="title"
-    placeholder="Book Title"
-  >
+    <h1>Create A Book</h1>
 
-  <textarea
-    id="description"
-    placeholder="Book Description"
-  ></textarea>
+    <div class="book-form">
 
-  <button id="publish-btn">
-    Publish Book
-  </button>
+      <input
+        type="text"
+        id="title"
+        placeholder="Book Title"
+      >
 
-  <div id="book-list"></div>
+      <textarea
+        id="description"
+        placeholder="Book Description"
+      ></textarea>
+
+      <button id="publish-btn">
+        Publish Book
+      </button>
+
+    </div>
+
+    <div id="book-list"></div>
+
+  </section>
 
   <script src="script.js"></script>
 
