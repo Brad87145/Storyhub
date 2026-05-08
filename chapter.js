@@ -1,12 +1,25 @@
-chapterCard.innerHTML = `
-  <a
-    href="chapter.html?book=${index}&chapter=${chapterIndex}"
-    class="chapter-link"
-  >
+const params =
+  new URLSearchParams(window.location.search);
 
-    <h2>${chapter.title}</h2>
+const bookIndex =
+  params.get("book");
 
-    <p>${chapter.content}</p>
+const chapterIndex =
+  params.get("chapter");
 
-  </a>
-`;
+const books =
+  JSON.parse(localStorage.getItem("books")) || [];
+
+const book =
+  books[bookIndex];
+
+const chapter =
+  book.chapters[chapterIndex];
+
+document.getElementById(
+  "chapter-page-title"
+).textContent = chapter.title;
+
+document.getElementById(
+  "chapter-page-content"
+).textContent = chapter.content;
