@@ -11,24 +11,40 @@ function displayBooks() {
 
   bookList.innerHTML = "";
 
-  books.forEach((book) => {
+  books.forEach((book, index) => {
 
     const bookCard =
       document.createElement("div");
 
     bookCard.classList.add("book-card");
 
-   bookCard.innerHTML = `
-  <div class="book-cover"></div>
+    bookCard.innerHTML = `
+      <div class="book-cover"></div>
 
-  <h3>${book.title}</h3>
+      <h3>${book.title}</h3>
 
-  <p>${book.description}</p>
+      <p>${book.description}</p>
 
-  <button class="delete-btn">
-    Delete
-  </button>
-`;
+      <button class="delete-btn">
+        Delete
+      </button>
+    `;
+
+    const deleteBtn =
+      bookCard.querySelector(".delete-btn");
+
+    deleteBtn.addEventListener("click", () => {
+
+      books.splice(index, 1);
+
+      localStorage.setItem(
+        "books",
+        JSON.stringify(books)
+      );
+
+      displayBooks();
+
+    });
 
     bookList.appendChild(bookCard);
 
@@ -61,62 +77,8 @@ publishBtn.addEventListener("click", () => {
     JSON.stringify(books)
   );
 
+  displayBooks();
 
-  function displayBooks() {
+});
 
-  bookList.innerHTML = "";
-
-  books.forEach((book, index) => {
-
-    const bookCard =
-      document.createElement("div");
-
-    bookCard.classList.add("book-card");
-
-    bookCard.innerHTML = `
-      <div class="book-cover"></div>
-
-      <h3>${book.title}</h3>
-
-      <p>${book.description}</p>
-
-      <button class="delete-btn">
-        Delete
-      </button>
-    `;
-
-    const deleteBtn =
-      bookCard.querySelector(".delete-btn");
-
-    deleteBtn.addEventListener("click", () => {
-
-      books.splice(index, 1);
-
-      localStorage.setItem(
-        "books",
-        JSON.stringify(books)
-      );
-
-      displayBooks(bookCard.innerHTML = `
-  <a href="book.html?index=${index}" class="book-link">
-
-    <div class="book-cover"></div>
-
-    <h3>${book.title}</h3>
-
-    <p>${book.description}</p>
-
-  </a>
-
-  <button class="delete-btn">
-    Delete
-  </button>
-`;);
-
-    });
-
-    bookList.appendChild(bookCard);
-
-  });
-
-}
+displayBooks();
