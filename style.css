@@ -124,3 +124,17 @@ button {
 .delete-btn:hover {
   background: #dc2626;
 }
+
+/* BOOK COVER */
+
+.book-cover {
+  width: 100%;
+
+  height: 250px;
+
+  object-fit: cover;
+
+  border-radius: 12px;
+
+  margin-bottom: 20px;
+}
