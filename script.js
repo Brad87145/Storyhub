@@ -4,40 +4,47 @@ const button =
 const list =
   document.getElementById("book-list");
 
+const searchInput =
+  document.getElementById("search");
+
 let books =
   JSON.parse(localStorage.getItem("books")) || [];
 
 /* DISPLAY BOOKS */
 
-function displayBooks() {
+function displayBooks(filteredBooks = books) {
 
   list.innerHTML = "";
 
-  books.forEach((book, index) => {
+  filteredBooks.forEach((book, index) => {
 
     const card =
       document.createElement("div");
 
     card.classList.add("book-card");
 
-  card.innerHTML = `
-  <a href="book.html?index=${index}" class="book-link">
+    card.innerHTML = `
+      <a
+        href="book.html?index=${index}"
+        class="book-link"
+      >
 
-    <img
-      src="${book.cover}"
-      class="book-cover"
-    >
+        <img
+          src="${book.cover}"
+          class="book-cover"
+        >
 
-    <h2>${book.title}</h2>
+        <h2>${book.title}</h2>
 
-    <p>${book.description}</p>
+        <p>${book.description}</p>
 
-  </a>
+      </a>
 
-  <button class="delete-btn">
-    Delete
-  </button>
-`;
+      <button class="delete-btn">
+        Delete
+      </button>
+    `;
+
     const deleteBtn =
       card.querySelector(".delete-btn");
 
@@ -73,17 +80,39 @@ button.addEventListener("click", () => {
   const coverFile =
     document.getElementById("cover").files[0];
 
-if (coverFile) {
+  if (coverFile) {
 
-  const reader =
-    new FileReader();
+    const reader =
+      new FileReader();
 
-  reader.onload = function () {
+    reader.onload = function () {
+
+      const newBook = {
+        title,
+        description,
+        cover: reader.result
+      };
+
+      books.push(newBook);
+
+      localStorage.setItem(
+        "books",
+        JSON.stringify(books)
+      );
+
+      displayBooks();
+
+    };
+
+    reader.readAsDataURL(coverFile);
+
+  } else {
 
     const newBook = {
       title,
       description,
-      cover: reader.result
+      cover:
+        "https://via.placeholder.com/300x250"
     };
 
     books.push(newBook);
@@ -95,30 +124,30 @@ if (coverFile) {
 
     displayBooks();
 
-  };
+  }
 
-  reader.readAsDataURL(coverFile);
-
-} else {
-
-  const newBook = {
-    title,
-    description,
-    cover: "https://via.placeholder.com/300x250"
-  };
-
-  books.push(newBook);
-
-  localStorage.setItem(
-    "books",
-    JSON.stringify(books)
-  );
-
-  displayBooks();
-
-}
 });
 
-/* LOAD BOOKS */
+/* SEARCH */
+
+searchInput.addEventListener("input", () => {
+
+  const searchText =
+    searchInput.value.toLowerCase();
+
+  const filteredBooks =
+    books.filter((book) => {
+
+      return book.title
+        .toLowerCase()
+        .includes(searchText);
+
+    });
+
+  displayBooks(filteredBooks);
+
+});
+
+/* LOAD */
 
 displayBooks();
