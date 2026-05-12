@@ -25,7 +25,7 @@ if (book) {
 
 }
 
-/* CHAPTERS */
+/* CHAPTER SYSTEM */
 
 if (!book.chapters) {
   book.chapters = [];
@@ -33,6 +33,8 @@ if (!book.chapters) {
 
 const chapterList =
   document.getElementById("chapter-list");
+
+/* DISPLAY CHAPTERS */
 
 function displayChapters() {
 
@@ -44,44 +46,51 @@ function displayChapters() {
       document.createElement("div");
 
     chapterCard.classList.add("chapter-card");
-const deleteBtn =
-  chapterCard.querySelector(
-    ".delete-chapter-btn"
-  );
 
-deleteBtn.addEventListener("click", () => {
-
-  book.chapters.splice(chapterIndex, 1);
-
-  localStorage.setItem(
-    "books",
-    JSON.stringify(books)
-  );
-
-  displayChapters();
-
-});
     chapterCard.innerHTML = `
-     chapterCard.innerHTML = `
-  <a
-    href="chapter.html?book=${index}&chapter=${chapterIndex}"
-    class="chapter-link"
-  >
+      <a
+        href="chapter.html?book=${index}&chapter=${chapterIndex}"
+        class="chapter-link"
+      >
 
-    <h2>${chapter.title}</h2>
+        <h2>${chapter.title}</h2>
 
-    <p>${chapter.content}</p>
+        <p>${chapter.content}</p>
 
-  </a>
+      </a>
 
-  <button
-    class="delete-chapter-btn"
-    data-index="${chapterIndex}"
-  >
-    Delete Chapter
-  </button>
-`;
+      <button
+        class="delete-chapter-btn"
+      >
+        Delete Chapter
+      </button>
+    `;
+
+    const deleteBtn =
+      chapterCard.querySelector(
+        ".delete-chapter-btn"
+      );
+
+    deleteBtn.addEventListener("click", () => {
+
+      book.chapters.splice(chapterIndex, 1);
+
+      localStorage.setItem(
+        "books",
+        JSON.stringify(books)
+      );
+
+      displayChapters();
+
+    });
+
+    chapterList.appendChild(chapterCard);
+
+  });
+
 }
+
+/* ADD CHAPTER */
 
 const addChapterBtn =
   document.getElementById("add-chapter-btn");
@@ -93,6 +102,8 @@ addChapterBtn.addEventListener("click", () => {
 
   const chapterContent =
     document.getElementById("chapter-content").value;
+
+  if (chapterTitle === "") return;
 
   const newChapter = {
     title: chapterTitle,
@@ -109,5 +120,7 @@ addChapterBtn.addEventListener("click", () => {
   displayChapters();
 
 });
+
+/* INITIAL LOAD */
 
 displayChapters();
