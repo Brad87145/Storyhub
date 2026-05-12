@@ -57,3 +57,42 @@ saveBtn.addEventListener("click", () => {
   alert("Chapter saved!");
 
 });
+/* CHAPTER NAVIGATION */
+
+const prevBtn =
+  document.getElementById("prev-chapter");
+
+const nextBtn =
+  document.getElementById("next-chapter");
+
+/* PREVIOUS */
+
+prevBtn.addEventListener("click", () => {
+
+  const prevIndex =
+    Number(chapterIndex) - 1;
+
+  if (prevIndex >= 0) {
+
+    window.location.href =
+      `chapter.html?book=${bookIndex}&chapter=${prevIndex}`;
+
+  }
+
+});
+
+/* NEXT */
+
+nextBtn.addEventListener("click", () => {
+
+  const nextIndex =
+    Number(chapterIndex) + 1;
+
+  if (nextIndex < book.chapters.length) {
+
+    window.location.href =
+      `chapter.html?book=${bookIndex}&chapter=${nextIndex}`;
+
+  }
+
+});
