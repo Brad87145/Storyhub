@@ -124,3 +124,58 @@ addChapterBtn.addEventListener("click", () => {
 /* INITIAL LOAD */
 
 displayChapters();
+/* SAVE BOOK */
+
+const saveBookBtn =
+  document.getElementById("save-book-btn");
+
+saveBookBtn.addEventListener("click", () => {
+
+  const updatedTitle =
+    document.getElementById("book-title").value;
+
+  const updatedDescription =
+    document.getElementById("book-description").value;
+
+  const coverFile =
+    document.getElementById("edit-cover").files[0];
+
+  book.title =
+    updatedTitle;
+
+  book.description =
+    updatedDescription;
+
+  if (coverFile) {
+
+    const reader =
+      new FileReader();
+
+    reader.onload = function () {
+
+      book.cover =
+        reader.result;
+
+      localStorage.setItem(
+        "books",
+        JSON.stringify(books)
+      );
+
+      alert("Book updated!");
+
+    };
+
+    reader.readAsDataURL(coverFile);
+
+  } else {
+
+    localStorage.setItem(
+      "books",
+      JSON.stringify(books)
+    );
+
+    alert("Book updated!");
+
+  }
+
+});
