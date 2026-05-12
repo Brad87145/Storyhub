@@ -17,12 +17,11 @@ if (book) {
   document.getElementById("book-cover").src =
     book.cover;
 
-  document.getElementById("book-title").textContent =
-    book.title;
+ document.getElementById("book-title").value =
+  book.title;
 
-  document.getElementById("book-description").textContent =
-    book.description;
-
+document.getElementById("book-description").value =
+  book.description;
 }
 
 /* CHAPTER SYSTEM */
