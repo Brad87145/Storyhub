@@ -420,3 +420,30 @@ button {
   }
 
 }
+/* LIGHT MODE */
+
+.light-mode {
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.light-mode .book-card,
+.light-mode .chapter-card {
+  background: white;
+  color: #0f172a;
+}
+
+.light-mode textarea,
+.light-mode input {
+  background: white;
+  color: black;
+}
+
+.light-mode .chapter-page p,
+.light-mode .chapter-card p {
+  color: #334155;
+}
+
+.light-mode a {
+  color: #0f172a;
+}
