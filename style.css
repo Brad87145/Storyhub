@@ -447,3 +447,18 @@ button {
 .light-mode a {
   color: #0f172a;
 }
+/* CHAPTER NAVIGATION */
+
+.chapter-navigation {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-top: 50px;
+}
+
+.chapter-navigation button {
+  flex: 1;
+}
