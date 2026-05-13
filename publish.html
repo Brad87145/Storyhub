@@ -1,65 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Publish</title>
+  <meta charset="UTF-8" />
 
-  <link rel="stylesheet" href="style.css">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>StoryHub Publish</title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  />
+
 </head>
+
 <body>
 
-  <section class="publish">
+  <section class="publish-section">
+
+    <button id="theme-toggle">
+      Toggle Theme
+    </button>
 
     <h1>Create A Book</h1>
-    <button id="theme-toggle">
-  Toggle Theme
-</button>
 
-    <div class="book-form">
+    <input
+      type="text"
+      id="title"
+      placeholder="Book Title"
+    />
 
-      <input
-        type="text"
-        id="title"
-        placeholder="Book Title"
-      >
+    <textarea
+      id="description"
+      placeholder="Book Description"
+    ></textarea>
 
-      <textarea
-        id="description"
-        placeholder="Book Description"
-      ></textarea>
-      
-<input
-  type="file"
-  id="cover"
-  accept="image/*"
->
-      <button id="publish-btn">
-        Publish Book
-      </button>
+    <input
+      type="file"
+      id="cover"
+    />
 
-    </div>
-<input
-  type="text"
-  id="search"
-  placeholder="Search books..."
->
+    <button id="publish-btn">
+      Publish Book
+    </button>
+
+    <input
+      type="text"
+      id="search"
+      placeholder="Search books..."
+    />
+
     <div id="book-list"></div>
 
   </section>
 
- <script
-  type="module"
-  src="firebase.js"
-></script>
+  <script
+    type="module"
+    src="firebase.js"
+  ></script>
 
-<script
-  src="script.js"
-></script>
-<script
-  type="module"
-  src="script.js"
-></script>
+  <script
+    type="module"
+    src="script.js"
+  ></script>
+
+  <script src="theme.js"></script>
+
 </body>
+
 </html>
