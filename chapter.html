@@ -1,51 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Chapter</title>
+  <meta charset="UTF-8" />
 
-  <link rel="stylesheet" href="style.css">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>StoryHub Chapter</title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  />
+
 </head>
+
 <body>
 
   <section class="chapter-page">
+
+    <button id="theme-toggle">
+      Toggle Theme
+    </button>
+
+    <h1 id="chapter-title"></h1>
+
+    <p id="chapter-content"></p>
+
     <div class="chapter-navigation">
 
-  <button id="prev-chapter">
-    Previous Chapter
-  </button>
+      <button id="prev-chapter">
+        Previous Chapter
+      </button>
 
-  <button id="next-chapter">
-    Next Chapter
-  </button>
+      <button id="next-chapter">
+        Next Chapter
+      </button>
 
-</div>
+    </div>
 
-   <h1>Edit Chapter</h1>
+  </section>
 
-<input
-  type="text"
-  id="chapter-page-title"
-  placeholder="Chapter Title"
->
+  <script
+    type="module"
+    src="firebase.js"
+  ></script>
 
-<textarea
-  id="chapter-page-content"
-  placeholder="Chapter Content"
-></textarea>
+  <script
+    type="module"
+    src="chapter.js"
+  ></script>
 
-<button id="save-chapter-btn">
-  Save Chapter
-</button>
-<script
-  type="module"
-  src="firebase.js"
-></script>
+  <script src="theme.js"></script>
 
-<script
-  src="script.js"
-></script>
 </body>
+
 </html>
