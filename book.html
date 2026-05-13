@@ -1,81 +1,90 @@
-<button id="theme-toggle">
-  Toggle Theme
-</button>
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Book</title>
+  <meta charset="UTF-8" />
 
-  <link rel="stylesheet" href="style.css">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>StoryHub Book</title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  />
+
 </head>
+
 <body>
 
   <section class="book-page">
 
+    <button id="theme-toggle">
+      Toggle Theme
+    </button>
+
     <img
       id="book-cover"
       class="book-page-cover"
-    >
+    />
 
     <input
-  type="text"
-  id="book-title"
-  placeholder="Book Title"
->
+      type="text"
+      id="book-title"
+      placeholder="Book Title"
+    >
 
-<textarea
-  id="book-description"
-  placeholder="Book Description"
-></textarea>
+    <textarea
+      id="book-description"
+      placeholder="Book Description"
+    ></textarea>
 
-<input
-  type="file"
-  id="edit-cover"
->
+    <input
+      type="file"
+      id="edit-cover"
+    >
 
-<button id="save-book-btn">
-  Save Book
-</button>
-    
-<div class="chapter-section">
+    <button id="save-book-btn">
+      Save Book
+    </button>
 
-  <h2>Add Chapter</h2>
+    <h2>Chapters</h2>
 
-  <input
-    type="text"
-    id="chapter-title"
-    placeholder="Chapter Title"
-  >
+    <input
+      type="text"
+      id="chapter-title"
+      placeholder="Chapter Title"
+    />
 
-  <textarea
-    id="chapter-content"
-    placeholder="Write your chapter..."
-  ></textarea>
+    <textarea
+      id="chapter-content"
+      placeholder="Chapter Content"
+    ></textarea>
 
-  <button id="add-chapter-btn">
-    Add Chapter
-  </button>
+    <button id="add-chapter-btn">
+      Add Chapter
+    </button>
 
-</div>
+    <div id="chapter-list"></div>
 
-<div id="chapter-list"></div>
   </section>
 
   <script
-  type="module"
-  src="book.js"
-></script>
-<script
-  type="module"
-  src="firebase.js"
-></script>
+    type="module"
+    src="firebase.js"
+  ></script>
 
-<script
-  src="script.js"
-></script>
+  <script
+    type="module"
+    src="book.js"
+  ></script>
+
+  <script src="theme.js"></script>
+
 </body>
+
 </html>
