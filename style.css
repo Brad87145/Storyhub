@@ -462,3 +462,24 @@ button {
 .chapter-navigation button {
   flex: 1;
 }
+/* AUTH */
+
+.auth-box {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 15px;
+
+  margin-bottom: 40px;
+}
+
+.auth-buttons {
+  display: flex;
+
+  gap: 15px;
+}
+
+.auth-buttons button {
+  flex: 1;
+}
