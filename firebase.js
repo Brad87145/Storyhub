@@ -1,14 +1,17 @@
-// FIREBASE IMPORTS
-
 import { initializeApp }
 from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
-// FIREBASE CONFIG
+import {
+  getFirestore
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+/* CONFIG */
 
 const firebaseConfig = {
 
   apiKey:
-    "AIzaSyB6LmBQH13pl-RMI8nkwmntG82FaKzvXRg",
+    "YOUR_API_KEY",
 
   authDomain:
     "storyhub-47f31.firebaseapp.com",
@@ -27,11 +30,20 @@ const firebaseConfig = {
 
 };
 
-// INITIALIZE
+/* INIT */
 
 const app =
   initializeApp(firebaseConfig);
 
+/* DATABASE */
+
+const db =
+  getFirestore(app);
+
 console.log(
-  "Firebase Connected!"
+  "Firestore Connected!"
 );
+
+export {
+  db
+};
